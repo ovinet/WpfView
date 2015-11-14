@@ -9,7 +9,6 @@ namespace MyWarcraft
     /// </summary>
     public partial class MainWindow : Window, IView
     {
-
         public MainWindow()
         {
             InitializeComponent();

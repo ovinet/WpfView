@@ -9,12 +9,29 @@
         xmlns:views="clr-namespace:MyWarcraft.Views"
         xmlns:viewsModels="clr-namespace:MyWarcraft.ViewModels"
         
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="350" Width="525" 
         d:DataContext="{d:DesignInstance viewsModels:PlayerBaseViewModel, IsDesignTimeCreatable=True}"
-        prism:ViewModelLocator.AutoWireViewModel="True">
+        prism:ViewModelLocator.AutoWireViewModel="True"
+>
     <Grid>
-        <views:PlayerBaseView DataContext="{Binding PlayerBaseViewModel}">
+        <ListView Margin="10" Name="lvBuildingsCapbilities" DataContext="{Binding PlayerBase.BuildBuildingsCapabilities}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Button  Content="{Binding Name}"></Button>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-        </views:PlayerBaseView>
+        <ListView Margin="10" Name="lvUnitsCapbilities"  DataContext="{Binding PlayerBase.BuildUnitsCapabilities}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Button  Content="{Binding Name}"></Button>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

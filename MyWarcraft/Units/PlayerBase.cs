@@ -1,25 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Practices.Prism.Mvvm;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Uwarcraft.Units
 {
-    public class PlayerBase
+    public class PlayerBase : BindableBase
     {
-        public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities
+        public ObservableCollection<AbstractBuildBuildingCapability> BuildBuildingsCapabilities
         {
             get; set;
         }
 
-        public List<AbstractBuildUnitCapability> BuildUnitsCapabilities
+        public ObservableCollection<AbstractBuildUnitCapability> BuildUnitsCapabilities
         {
             get; set;
         }
 
         public PlayerBase()
         {
-            BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
+            BuildBuildingsCapabilities = new ObservableCollection<AbstractBuildBuildingCapability>();
             BuildBuildingsCapabilities.Add(new BuildFarmCapability());
 
-            BuildUnitsCapabilities = new List<AbstractBuildUnitCapability>();
+            BuildUnitsCapabilities = new ObservableCollection<AbstractBuildUnitCapability>();
             BuildUnitsCapabilities.Add(new BuildPeasantCapability());
         }
     }
