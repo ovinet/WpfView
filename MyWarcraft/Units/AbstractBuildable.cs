@@ -25,7 +25,9 @@
         {
             if (BuildingComplete!=null)
             {
-                BuildingComplete.Invoke(this, new BuildingCompleteEventArgs());
+                var arg = new BuildingCompleteEventArgs();
+                arg.Capabilities = new System.Collections.ObjectModel.ObservableCollection<AbstractBuildBuildingCapability>();
+                BuildingComplete.Invoke(this, arg);
             }
         }
 

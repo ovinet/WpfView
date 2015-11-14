@@ -23,5 +23,11 @@ namespace Uwarcraft.Units
             BuildUnitsCapabilities = new ObservableCollection<AbstractBuildUnitCapability>();
             BuildUnitsCapabilities.Add(new BuildPeasantCapability());
         }
+
+        public void CreateNewFarm()
+        {
+            var createBarrackCapability = new BuildBarrackCapability();
+            BuildBuildingsCapabilities.Add(createBarrackCapability);
+        }
     }
 }

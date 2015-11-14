@@ -5,10 +5,47 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
               xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Mvvm;assembly=Microsoft.Practices.Prism.Mvvm.Desktop"
       mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:views="clr-namespace:MyWarcraft.Views"
+        xmlns:viewsModels="clr-namespace:MyWarcraft.ViewModels">
+    <Grid Margin="0,0,-402,-150">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="284*"/>
+        </Grid.ColumnDefinitions>
 
-        <ListView Margin="10" Name="lvBuildingsCapbilities" DataContext="{Binding PlayerBase.BuildBuildingsCapabilities}">
+        <ListView Grid.Row="0" Grid.Column="0"
+                  Margin="10" Name="lvBuildingsCapbilities" ItemsSource="{Binding BuildBuildingsCapabilities}">
+            <ListView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC5C5C5" Offset="0.514"/>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
+                </LinearGradientBrush>
+            </ListView.Background>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <views:CapabilityView DataContext="{Binding}"></views:CapabilityView>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView  Grid.Row="1" Grid.Column="0"
+                   Margin="10" Name="lvUnitsCapbilities"  ItemsSource="{Binding BuildUnitsCapabilities}" >
+
+            <ListView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC5C5C5" Offset="0.514"/>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
+                </LinearGradientBrush>
+            </ListView.Background>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -18,14 +55,6 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Margin="10" Name="lvUnitsCapbilities"  DataContext="{Binding PlayerBase.BuildUnitsCapabilities}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <Button  Content="{Binding Name}"></Button>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Grid></Grid>
     </Grid>
 </UserControl>

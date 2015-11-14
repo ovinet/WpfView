@@ -1,6 +1,4 @@
-﻿using NLog;
-using System;
-namespace Uwarcraft.Units
+﻿namespace Uwarcraft.Units
 {
     public class BaseUnit
     {

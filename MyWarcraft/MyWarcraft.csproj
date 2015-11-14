@@ -90,8 +90,13 @@
     <Compile Include="Units\IBuildable.cs" />
     <Compile Include="Units\Peasant.cs" />
     <Compile Include="Units\PlayerBase.cs" />
+    <Compile Include="Units\SimpleBuilder.cs" />
+    <Compile Include="ViewModels\BuildingCapabilityViewModel.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\PlayerBaseViewModel.cs" />
+    <Compile Include="Views\CapabilityView.xaml.cs">
+      <DependentUpon>CapabilityView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PlayerBaseView.xaml.cs">
       <DependentUpon>PlayerBaseView.xaml</DependentUpon>
     </Compile>
@@ -107,6 +112,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\CapabilityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PlayerBaseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

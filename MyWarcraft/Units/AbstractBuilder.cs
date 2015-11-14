@@ -25,6 +25,8 @@ namespace Uwarcraft.Units
         public virtual void StartBuilding(IBuildable objectToBeBuilt)
         {
             this.objectToBeBuilt = objectToBeBuilt;
+            timer = new Timer();
+            timer.Interval = 2000;
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
         }

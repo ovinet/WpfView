@@ -9,9 +9,8 @@
         xmlns:views="clr-namespace:MyWarcraft.Views"
         xmlns:viewsModels="clr-namespace:MyWarcraft.ViewModels"
         
-        Title="MainWindow" Height="350" Width="525" 
-        d:DataContext="{d:DesignInstance viewsModels:GameViewModel, IsDesignTimeCreatable=True}"
-        prism:ViewModelLocator.AutoWireViewModel="True">
+        Title="MainWindow" Height="700" Width="1200">
+
     <Grid>
         <views:PlayerBaseView DataContext="{Binding PlayerBaseViewModel}" >
             
