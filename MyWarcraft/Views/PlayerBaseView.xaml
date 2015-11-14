@@ -5,9 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
               xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Mvvm;assembly=Microsoft.Practices.Prism.Mvvm.Desktop"
       mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300"
-              d:DataContext="{d:DesignInstance viewsModels:PlayerBaseViewModel, IsDesignTimeCreatable=True}"
-        prism:ViewModelLocator.AutoWireViewModel="True">
+             d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
 
         <ListView Margin="10" Name="lvBuildingsCapbilities" DataContext="{Binding PlayerBase.BuildBuildingsCapabilities}">

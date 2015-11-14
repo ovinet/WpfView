@@ -1,7 +1,10 @@
-﻿namespace Uwarcraft.Units
+﻿using NLog;
+using System;
+namespace Uwarcraft.Units
 {
     public class BaseUnit
     {
+
         private int unitCost;
         private int unitHealth;
         private int unitSpeed;
@@ -10,7 +13,6 @@
 
         public void attack()
         {
-            throw new System.NotImplementedException();
         }
 
         public void dismiss()

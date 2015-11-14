@@ -1,5 +1,4 @@
 ﻿using Microsoft.Practices.Prism.Mvvm;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Uwarcraft.Units

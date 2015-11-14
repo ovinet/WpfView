@@ -70,17 +70,10 @@
       <FileName>Units\Peasant.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Units.Bowman">
-    <Position X="2.5" Y="11.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Units\Bowman.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Uwarcraft.Units.AbstractBuildBuildingCapability">
     <Position X="9.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\AbstractBuildBuildingCapability.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -102,7 +95,7 @@
   <Class Name="Uwarcraft.Units.AbstractUnit">
     <Position X="1.5" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\AbstractUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -111,6 +104,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAACAAAAAAA=</HashCode>
       <FileName>Units\AbstractBuilding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.Bowman">
+    <Position X="2.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Units\Bowman.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Uwarcraft.Units.IBuildable">
