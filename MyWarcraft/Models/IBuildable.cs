@@ -1,4 +1,6 @@
-﻿namespace Uwarcraft.Units
+﻿using MyWarcraft.Models.Events;
+
+namespace MyWarcraft.Models
 {
     public interface IBuildable
     {

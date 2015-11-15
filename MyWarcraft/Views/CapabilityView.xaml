@@ -6,11 +6,9 @@
              xmlns:local="clr-namespace:MyWarcraft.Views"
               xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Mvvm;assembly=Microsoft.Practices.Prism.Mvvm.Desktop"
              mc:Ignorable="d" 
-             d:DesignHeight="40" d:DesignWidth="120"
-              
-             >
+             Width="160" Height="40">
     <Grid>
         <Button  Content="{Binding BuildCapability.Name}"
-                 Command="{Binding Build}"></Button>
+                 Command="{Binding StartBuilding}"></Button>
     </Grid>
 </UserControl>

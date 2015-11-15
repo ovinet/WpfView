@@ -12,12 +12,12 @@ namespace MyWarcraft
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        public PlayerBaseViewModel PlayerBaseViewModel { get; set; }
+        public PlayerBaseViewModel PlayerBaseVM { get; set; }
         public MainWindow()
         {
             logger.Trace("MainWindow created");
             InitializeComponent();
-            PlayerBaseViewModel = new PlayerBaseViewModel();
+            PlayerBaseVM = new PlayerBaseViewModel();
             this.DataContext = this;
             logger.Trace("MainWindow initialized");
         }

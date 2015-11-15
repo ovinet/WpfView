@@ -12,8 +12,7 @@
         Title="MainWindow" Height="700" Width="1200">
 
     <Grid>
-        <views:PlayerBaseView DataContext="{Binding PlayerBaseViewModel}" >
-            
+        <views:PlayerBaseView DataContext="{Binding PlayerBaseVM}" >
         </views:PlayerBaseView>
     </Grid>
 </Window>

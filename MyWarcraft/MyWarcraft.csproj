@@ -70,32 +70,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Units\AbstractBuildable.cs" />
-    <Compile Include="Units\AbstractBuildBuildingCapability.cs" />
-    <Compile Include="Units\AbstractBuilder.cs" />
-    <Compile Include="Units\AbstractBuilding.cs" />
-    <Compile Include="Units\AbstractBuildUnitCapability.cs" />
-    <Compile Include="Units\AbstractUnit.cs" />
-    <Compile Include="Units\Barracks.cs" />
-    <Compile Include="Units\BaseUnit.cs" />
-    <Compile Include="Units\Bowman.cs" />
-    <Compile Include="Units\BowWorkshop.cs" />
-    <Compile Include="Units\BuildBarracksCapability.cs" />
-    <Compile Include="Units\BuildBowmanCapability.cs" />
-    <Compile Include="Units\BuildFarmCapability.cs" />
-    <Compile Include="Units\BuildingComplete.cs" />
-    <Compile Include="Units\BuildingCompleteEventArgs.cs" />
-    <Compile Include="Units\BuildPeasantCapability.cs" />
-    <Compile Include="Units\Farm.cs" />
-    <Compile Include="Units\IBuildable.cs" />
-    <Compile Include="Units\Peasant.cs" />
-    <Compile Include="Units\PlayerBase.cs" />
-    <Compile Include="Units\SimpleBuilder.cs" />
+    <Compile Include="Models\AbstractBuildable.cs" />
+    <Compile Include="Models\Buildings\AbstractBuilding.cs" />
+    <Compile Include="Models\Capabilities\AbstractBuildingCapability.cs" />
+    <Compile Include="Models\Builders\AbstractBuilder.cs" />
+    <Compile Include="Models\Capabilities\BuildSwordmanCapability.cs" />
+    <Compile Include="Models\Capabilities\BuildBowWorkshopCapability.cs" />
+    <Compile Include="Models\Events\ComponentSelected.cs" />
+    <Compile Include="Models\Events\BuildingStarted.cs" />
+    <Compile Include="Models\Units\AbstractUnit.cs" />
+    <Compile Include="Models\Buildings\Barrack.cs" />
+    <Compile Include="Models\BaseUnit.cs" />
+    <Compile Include="Models\Units\Swordman.cs" />
+    <Compile Include="Models\Units\Archer.cs" />
+    <Compile Include="Models\Buildings\BowWorkshop.cs" />
+    <Compile Include="Models\Capabilities\BuildBarracksCapability.cs" />
+    <Compile Include="Models\Capabilities\BuildArcherCapability.cs" />
+    <Compile Include="Models\Capabilities\BuildFarmCapability.cs" />
+    <Compile Include="Models\Events\BuildingComplete.cs" />
+    <Compile Include="Models\Events\PercentageBuilt.cs" />
+    <Compile Include="Models\Capabilities\BuildPeasantCapability.cs" />
+    <Compile Include="Models\Buildings\Farm.cs" />
+    <Compile Include="Models\IBuildable.cs" />
+    <Compile Include="Models\Units\Peasant.cs" />
+    <Compile Include="Models\PlayerBase.cs" />
+    <Compile Include="Models\Builders\SimpleBuilder.cs" />
+    <Compile Include="Models\State.cs" />
+    <Compile Include="ViewModels\BoardViewModel.cs" />
     <Compile Include="ViewModels\BuildingCapabilityViewModel.cs" />
-    <Compile Include="ViewModels\GameViewModel.cs" />
+    <Compile Include="ViewModels\ComponentViewModel.cs" />
     <Compile Include="ViewModels\PlayerBaseViewModel.cs" />
+    <Compile Include="Views\BoardView.xaml.cs">
+      <DependentUpon>BoardView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CapabilityView.xaml.cs">
       <DependentUpon>CapabilityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComponentView.xaml.cs">
+      <DependentUpon>ComponentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PlayerBaseView.xaml.cs">
       <DependentUpon>PlayerBaseView.xaml</DependentUpon>
@@ -112,7 +124,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\BoardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CapabilityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComponentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,7 +171,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Units\BuildingsAndUnitsClassDiagram.cd" />
+    <None Include="Models\BuildingsAndUnitsClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

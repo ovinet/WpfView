@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300"
              xmlns:views="clr-namespace:MyWarcraft.Views"
         xmlns:viewsModels="clr-namespace:MyWarcraft.ViewModels">
-    <Grid Margin="0,0,-402,-150">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
@@ -18,43 +18,37 @@
             <ColumnDefinition Width="284*"/>
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Row="0" Grid.Column="0"
-                  Margin="10" Name="lvBuildingsCapbilities" ItemsSource="{Binding BuildBuildingsCapabilities}">
-            <ListView.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFC5C5C5" Offset="0.514"/>
-                    <GradientStop Color="White"/>
-                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
-                </LinearGradientBrush>
-            </ListView.Background>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <views:CapabilityView DataContext="{Binding}"></views:CapabilityView>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10" Orientation="Vertical">
+            <TextBlock>BUILDINGS</TextBlock>
+            <ListView  Name="lvBuildingsCapbilities" ItemsSource="{Binding BoardVM.SelectedComponent.BuildingCapabilitiesVMs}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <views:CapabilityView HorizontalAlignment="Center"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel >
 
-        <ListView  Grid.Row="1" Grid.Column="0"
-                   Margin="10" Name="lvUnitsCapbilities"  ItemsSource="{Binding BuildUnitsCapabilities}" >
 
-            <ListView.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFC5C5C5" Offset="0.514"/>
-                    <GradientStop Color="White"/>
-                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
-                </LinearGradientBrush>
-            </ListView.Background>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <Button  Content="{Binding Name}"></Button>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10" Orientation="Vertical">
+            <TextBlock>UNITS</TextBlock>
+            <ListView  Grid.Row="1" Grid.Column="0"
+                   Name="lvUnitsCapbilities"  ItemsSource="{Binding BoardVM.SelectedComponent.UnitsCapabilitiesVMs}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <views:CapabilityView HorizontalAlignment="Center"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
 
-        <Grid></Grid>
+        <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+            <views:BoardView DataContext="{Binding BoardVM}" >
+            </views:BoardView>
+        </Grid>
     </Grid>
 </UserControl>

@@ -1,22 +1,23 @@
-﻿using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Mvvm;
+﻿using Microsoft.Practices.Prism.Mvvm;
 using System.Windows.Input;
-using Uwarcraft.Units;
+using MyWarcraft.Models;
+using Microsoft.Practices.Prism.Commands;
+using MyWarcraft.Models.Capabilities;
 
 namespace MyWarcraft.ViewModels
 {
     public class BuildingCapabilityViewModel : BindableBase
     {
-        public ICommand Build { get; private set; }
-        public AbstractBuildBuildingCapability BuildCapability { get; set; }
+        public AbstractBuildingCapability BuildCapability { get; set; }
+        public ICommand StartBuilding { get; protected set; }
 
-        public BuildingCapabilityViewModel(AbstractBuildBuildingCapability buildCapability)
+        public BuildingCapabilityViewModel(AbstractBuildingCapability buildCapability)
         {
             BuildCapability = buildCapability;
-            Build = new DelegateCommand<object>(BuildBuilding);
+            StartBuilding = new DelegateCommand<object>(Build);
         }
 
-        public void BuildBuilding(object obj)
+        private void Build(object obj)
         {
             BuildCapability.Build();
         }

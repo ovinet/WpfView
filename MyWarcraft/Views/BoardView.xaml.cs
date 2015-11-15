@@ -4,11 +4,11 @@ using System.Windows.Controls;
 namespace MyWarcraft.Views
 {
     /// <summary>
-    /// Interaction logic for CapabilityView.xaml
+    /// Interaction logic for BoardView.xaml
     /// </summary>
-    public partial class CapabilityView : UserControl, IView
+    public partial class BoardView : UserControl, IView
     {
-        public CapabilityView()
+        public BoardView()
         {
             InitializeComponent();
         }
