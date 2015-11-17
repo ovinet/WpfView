@@ -101,7 +101,7 @@
     <Compile Include="ViewModels\BuildingCapabilityViewModel.cs" />
     <Compile Include="ViewModels\ComponentViewModel.cs" />
     <Compile Include="ViewModels\PlayerBaseViewModel.cs" />
-    <Compile Include="ViewModels\Position.cs" />
+    <Compile Include="Models\Position.cs" />
     <Compile Include="Views\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
