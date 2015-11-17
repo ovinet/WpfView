@@ -1,0 +1,12 @@
+diff --git a/MyWarcraft/MyWarcraft.csproj b/MyWarcraft/MyWarcraft.csproj
+index a5f6211..5019a72 100644
+--- a/MyWarcraft/MyWarcraft.csproj
++++ b/MyWarcraft/MyWarcraft.csproj
+@@ -72,6 +72,7 @@
+     </ApplicationDefinition>
+     <Compile Include="Models\AbstractBuildable.cs" />
+     <Compile Include="Models\Builders\DoubleTimeBuilder.cs" />
++    <Compile Include="Models\Builders\SuperSlowBuilder.cs" />
+     <Compile Include="Models\Buildings\AbstractBuilding.cs" />
+     <Compile Include="Models\Capabilities\AbstractBuildingCapability.cs" />
+     <Compile Include="Models\Builders\AbstractBuilder.cs" />
