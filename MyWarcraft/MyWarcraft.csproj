@@ -71,6 +71,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\AbstractBuildable.cs" />
+    <Compile Include="Models\Builders\DoubleTimeBuilder.cs" />
     <Compile Include="Models\Buildings\AbstractBuilding.cs" />
     <Compile Include="Models\Capabilities\AbstractBuildingCapability.cs" />
     <Compile Include="Models\Builders\AbstractBuilder.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="ViewModels\BuildingCapabilityViewModel.cs" />
     <Compile Include="ViewModels\ComponentViewModel.cs" />
     <Compile Include="ViewModels\PlayerBaseViewModel.cs" />
+    <Compile Include="ViewModels\Position.cs" />
     <Compile Include="Views\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>

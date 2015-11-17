@@ -4,7 +4,7 @@
     {
         public SimpleBuilder()
         {
-            TimeForEachStep = 200;
+            TimeForEachStep = 100;
             PercentageBuiltAtEachStep = 5;
         }
     }

@@ -32,8 +32,16 @@ namespace MyWarcraft.Models
 
         public State State
         {
-            get;
-            set;
+            get
+            {
+                return state;
+            }
+
+            set
+            {
+                state = value;
+                OnPropertyChanged("State");
+            }
         }
 
         protected AbstractBuilder builder;
@@ -41,6 +49,7 @@ namespace MyWarcraft.Models
         protected Logger Log;
 
         private int percentageBuilt;
+        private State state;
 
         #region Constructor
         public AbstractBuildable()
