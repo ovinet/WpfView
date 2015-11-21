@@ -74,7 +74,6 @@
     </ApplicationDefinition>
     <Compile Include="Models\AbstractBuildable.cs" />
     <Compile Include="Models\Builders\DoubleTimeBuilder.cs" />
-    <Compile Include="Models\Builders\SuperSlowBuilder.cs" />
     <Compile Include="Models\Buildings\AbstractBuilding.cs" />
     <Compile Include="Models\Capabilities\AbstractBuildingCapability.cs" />
     <Compile Include="Models\Builders\AbstractBuilder.cs" />
