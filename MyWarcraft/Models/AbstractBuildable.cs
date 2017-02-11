@@ -10,7 +10,25 @@ namespace MyWarcraft.Models
 {
     public abstract class AbstractBuildable : BindableBase, IBuildable
     {
+        private static int numberOfBuildables = 0;
         public event BuildingComplete BuildingComplete;
+        protected int progress;
+
+        public int Id { get; set; }
+
+        public int Life
+        {
+            get
+            {
+                return life;
+            }
+
+            set
+            {
+                life = value;
+            }
+        }
+
 
         public ObservableCollection<AbstractBuildingCapability> BuildingsCapabilities { get; set; }
         public ObservableCollection<AbstractBuildingCapability> UnitsCapabilities { get; set; }
@@ -66,13 +84,16 @@ namespace MyWarcraft.Models
         private Position position;
         private int percentageBuilt;
         private State state;
+        private int life;
 
         #region Constructor
         public AbstractBuildable()
         {
             Log = LogManager.GetLogger(GetType().FullName);
             Position = new Position();
+            Id = numberOfBuildables++;
         }
+
         #endregion
 
 

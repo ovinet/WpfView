@@ -1,18 +1,21 @@
-﻿using MyWarcraft.Models.Builders;
+﻿using System;
 using MyWarcraft.Models.Capabilities;
-using System.Collections.ObjectModel;
 
 namespace MyWarcraft.Models.Buildings
 {
     public class BowWorkshop : AbstractBuilding
     {
-        public BowWorkshop()
+        #region Constructors
+
+        public BowWorkshop(int y, int x, int life) : base(y, x, life)
         {
-            UnitsCapabilities = new ObservableCollection<AbstractBuildingCapability>();
-            UnitsCapabilities.Add(new BuildArcherCapability());
-            Name = "BowWorkshop";
-            State = State.UNDER_CONSTRUCTION;
-            builder = new DoubleTimeBuilder();
+            TrainCapabilities.Add(typeof(TrainBowmanCapability), new TrainBowmanCapability());
+            BuildCapabilities.Add(typeof(UpgradeBowWorkshopCapability), new UpgradeBowWorkshopCapability());
+            progress = 10;
         }
+
+        #endregion
+
+
     }
 }

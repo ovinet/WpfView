@@ -1,0 +1,11 @@
+﻿10,10
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I
+F,W,I,G,F,F,S,G,G,I

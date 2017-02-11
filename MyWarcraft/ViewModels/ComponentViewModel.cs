@@ -4,7 +4,6 @@ using MyWarcraft.Models;
 using MyWarcraft.Models.Events;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using System;
 
 namespace MyWarcraft.ViewModels
 {

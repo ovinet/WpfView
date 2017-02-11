@@ -16,6 +16,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0" Margin="10" Orientation="Vertical">
@@ -50,5 +51,33 @@
             <views:BoardView DataContext="{Binding BoardVM}" >
             </views:BoardView>
         </Grid>
+
+        <StackPanel Grid.Row="0" Grid.Column="2" Margin="10" Orientation="Vertical">
+            <TextBlock>BUILDINGS</TextBlock>
+            <ListView  Name="Player2Buildings" ItemsSource="{Binding BoardVM.SelectedComponent.BuildingCapabilitiesVMs}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <views:CapabilityView HorizontalAlignment="Center"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel >
+
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="10" Orientation="Vertical">
+            <TextBlock>UNITS</TextBlock>
+            <ListView  Grid.Row="1" Grid.Column="0"
+                   Name="Player2Units"  ItemsSource="{Binding BoardVM.SelectedComponent.UnitsCapabilitiesVMs}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <views:CapabilityView HorizontalAlignment="Center"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -75,40 +75,85 @@
     <Compile Include="Models\AbstractBuildable.cs" />
     <Compile Include="Models\Builders\DoubleTimeBuilder.cs" />
     <Compile Include="Models\Buildings\AbstractBuilding.cs" />
+    <Compile Include="Models\Buildings\BarrackLevel1.cs" />
+    <Compile Include="Models\Buildings\BarrackLevel2.cs" />
+    <Compile Include="Models\Buildings\BowWorkshopLevel1.cs" />
+    <Compile Include="Models\Buildings\BowWorkshopLevel2.cs" />
+    <Compile Include="Models\Buildings\DecoratorBuilding.cs" />
+    <Compile Include="Models\Capabilities\AbstractBuildCapability.cs" />
     <Compile Include="Models\Capabilities\AbstractBuildingCapability.cs" />
     <Compile Include="Models\Builders\AbstractBuilder.cs" />
-    <Compile Include="Models\Capabilities\BuildSwordmanCapability.cs" />
+    <Compile Include="Models\Capabilities\AbstractTrainCapability.cs" />
+    <Compile Include="Models\Capabilities\BuildBarrackCapability.cs" />
     <Compile Include="Models\Capabilities\BuildBowWorkshopCapability.cs" />
+    <Compile Include="Models\Capabilities\BuildSwordmanCapability.cs" />
+    <Compile Include="Models\Capabilities\TrainBowmanCapability.cs" />
+    <Compile Include="Models\Capabilities\TrainFarmerCapability.cs" />
+    <Compile Include="Models\Capabilities\TrainSwordmanCapability.cs" />
+    <Compile Include="Models\Capabilities\UpgradeBarrackCapability.cs" />
+    <Compile Include="Models\Capabilities\UpgradeBowWorkshopCapability.cs" />
+    <Compile Include="Models\Commands\BlockingQueue.cs" />
+    <Compile Include="Models\Commands\FileCommandReader.cs" />
+    <Compile Include="Models\Commands\ICommand.cs" />
+    <Compile Include="Models\Commands\ICommandReader.cs" />
+    <Compile Include="Models\Commands\PlayerCommand.cs" />
+    <Compile Include="Models\Commands\StopCommand.cs" />
     <Compile Include="Models\Events\ComponentSelected.cs" />
     <Compile Include="Models\Events\BuildingStarted.cs" />
+    <Compile Include="Models\Board\Map.cs" />
+    <Compile Include="Models\Board\Resource.cs" />
+    <Compile Include="Models\Board\Tile.cs" />
+    <Compile Include="Models\Events\ConstructionArgs.cs" />
+    <Compile Include="Models\Events\ConstructionEvent.cs" />
+    <Compile Include="Models\Events\GatherEvent.cs" />
+    <Compile Include="Models\Events\NewTurn.cs" />
+    <Compile Include="Models\Events\NewTurnArgs.cs" />
+    <Compile Include="Models\Events\PushCommandArgs.cs" />
+    <Compile Include="Models\Events\PushCommandEvent.cs" />
+    <Compile Include="Models\Events\UnderAttack.cs" />
+    <Compile Include="Models\Events\UnderAttackArgs.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Pawn.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Point.cs" />
     <Compile Include="Models\Units\AbstractUnit.cs" />
     <Compile Include="Models\Buildings\Barrack.cs" />
     <Compile Include="Models\BaseUnit.cs" />
+    <Compile Include="Models\Units\BowmanUpgrade1.cs" />
+    <Compile Include="Models\Units\BowmanUpgrade2.cs" />
+    <Compile Include="Models\Units\DecoratorUnit.cs" />
     <Compile Include="Models\Units\Swordman.cs" />
     <Compile Include="Models\Units\Archer.cs" />
     <Compile Include="Models\Buildings\BowWorkshop.cs" />
-    <Compile Include="Models\Capabilities\BuildBarracksCapability.cs" />
     <Compile Include="Models\Capabilities\BuildArcherCapability.cs" />
-    <Compile Include="Models\Capabilities\BuildFarmCapability.cs" />
     <Compile Include="Models\Events\BuildingComplete.cs" />
     <Compile Include="Models\Events\PercentageBuilt.cs" />
-    <Compile Include="Models\Capabilities\BuildPeasantCapability.cs" />
     <Compile Include="Models\Buildings\Farm.cs" />
     <Compile Include="Models\IBuildable.cs" />
-    <Compile Include="Models\Units\Peasant.cs" />
-    <Compile Include="Models\PlayerBase.cs" />
+    <Compile Include="Models\Units\Farmer.cs" />
     <Compile Include="Models\Builders\SimpleBuilder.cs" />
     <Compile Include="Models\State.cs" />
+    <Compile Include="Models\Units\SwordmanUpgrade1.cs" />
+    <Compile Include="Models\Units\SwordManUpgrade2.cs" />
+    <Compile Include="Utils\Serializable.cs" />
+    <Compile Include="Utils\Serializer.cs" />
     <Compile Include="ViewModels\BoardViewModel.cs" />
     <Compile Include="ViewModels\BuildingCapabilityViewModel.cs" />
-    <Compile Include="ViewModels\ComponentViewModel.cs" />
-    <Compile Include="ViewModels\PlayerBaseViewModel.cs" />
+    <Compile Include="ViewModels\PawnViewModel.cs" />
+    <Compile Include="ViewModels\TileViewModel.cs" />
+    <Compile Include="ViewModels\PlayerViewModel.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Views\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CapabilityView.xaml.cs">
       <DependentUpon>CapabilityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuildingView.xaml.cs">
+      <DependentUpon>BuildingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TileView.xaml.cs">
+      <DependentUpon>TileView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ComponentView.xaml.cs">
       <DependentUpon>ComponentView.xaml</DependentUpon>
@@ -136,6 +181,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BuildingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TileView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ComponentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -159,6 +212,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SavedGames\Map.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SavedGames\script.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

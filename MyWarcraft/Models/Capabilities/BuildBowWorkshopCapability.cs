@@ -1,18 +1,17 @@
-﻿using MyWarcraft.Models.Buildings;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MyWarcraft.Models.Buildings;
 
 namespace MyWarcraft.Models.Capabilities
 {
-    public class BuildBowWorkshopCapability : AbstractBuildingCapability
+    class BuildBowWorkshopCapability : AbstractBuildCapability
     {
-        public BuildBowWorkshopCapability()
+        public override AbstractBuilding Build(AbstractBuilding building)
         {
-            Description = "builds a BowWorkshop";
-            Name = "BowWorkshop";
-        }
-
-        public override AbstractBuildable CreateComponent()
-        {
-            return new BowWorkshop();
+            return new BowWorkshop(0, 0, 0);
         }
     }
 }

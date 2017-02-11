@@ -1,21 +1,27 @@
-﻿using MyWarcraft.Models;
-using MyWarcraft.Models.Builders;
+﻿using System;
 using MyWarcraft.Models.Capabilities;
-using System.Collections.ObjectModel;
+
 
 namespace MyWarcraft.Models.Buildings
+
 {
-    public class Barrack : AbstractBuilding
+    class Barrack : AbstractBuilding
     {
-        public Barrack()
+
+        #region Constructors
+
+        public Barrack(int y, int x, int life) : base(y, x, life)
         {
-            BuildingsCapabilities = new ObservableCollection<AbstractBuildingCapability>();
-            UnitsCapabilities = new ObservableCollection<AbstractBuildingCapability>();
-            BuildingsCapabilities.Add(new BuildBowWorkshopCapability());
-            UnitsCapabilities.Add(new BuildSwordmanCapability());
-            Name = "Barrack";
-            State = State.UNDER_CONSTRUCTION;
-            builder = new DoubleTimeBuilder();
+            BuildCapabilities.Add(typeof(BuildBowWorkshopCapability), new BuildBowWorkshopCapability());
+            BuildCapabilities.Add(typeof(UpgradeBarrackCapability), new UpgradeBarrackCapability());
+            TrainCapabilities.Add(typeof(TrainSwordmanCapability), new TrainSwordmanCapability());
+            progress = 10;
         }
+
+        #endregion
+
+        #region Public Methods
+
+        #endregion
     }
 }

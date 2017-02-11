@@ -1,6 +1,5 @@
 ﻿using Microsoft.Practices.Prism.Mvvm;
 using System.Windows.Input;
-using MyWarcraft.Models;
 using Microsoft.Practices.Prism.Commands;
 using MyWarcraft.Models.Capabilities;
 

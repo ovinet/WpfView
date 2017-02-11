@@ -1,4 +1,5 @@
-﻿using MyWarcraft.Models.Builders;
+﻿using System;
+using MyWarcraft.Models.Builders;
 
 namespace MyWarcraft.Models.Units
 {
@@ -9,6 +10,16 @@ namespace MyWarcraft.Models.Units
             Name = "Archer";
             State = State.UNDER_CONSTRUCTION;
             builder = new DoubleTimeBuilder();
+        }
+
+        public override void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Move(Point destination)
+        {
+            throw new NotImplementedException();
         }
     }
 }

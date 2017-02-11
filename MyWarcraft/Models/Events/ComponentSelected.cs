@@ -7,6 +7,6 @@ namespace MyWarcraft.Models.Events
    
     public class ComponentSelectedEventArgs : EventArgs
     {
-        public ComponentViewModel ComponentVM { get; set; }
+        public PawnViewModel ComponentVM { get; set; }
     }
 }

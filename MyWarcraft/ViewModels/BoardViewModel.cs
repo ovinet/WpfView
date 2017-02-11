@@ -5,16 +5,18 @@ using MyWarcraft.Models.Events;
 using Microsoft.Practices.Prism.Commands;
 using System.Windows.Input;
 using System.Windows;
+using MyWarcraft.Models.Board;
+using MyWarcraft.Models.Buildings;
 
 namespace MyWarcraft.ViewModels
 {
     public class BoardViewModel : BindableBase
     {
         public ICommand Click { get; protected set; }
-        private ObservableCollection<AbstractBuildable> components { get; set; }
-        public ObservableCollection<ComponentViewModel> ComponentVMs { get; set; }
-        private ComponentViewModel selectedComponent;
-        public ComponentViewModel SelectedComponent
+        public ObservableCollection<TileViewModel> TileVMs { get; set; }
+        private Pawn pawn;
+        private PawnViewModel selectedComponent;
+        public PawnViewModel SelectedComponent
         {
             get
             {
@@ -28,17 +30,23 @@ namespace MyWarcraft.ViewModels
             }
         }
 
-        public BoardViewModel(ObservableCollection<AbstractBuildable> components)
+        public ObservableCollection<PawnViewModel> PawnVMs { get; private set; }
+
+        public BoardViewModel(Map map, Pawn p)
         {
-            this.components = components;
-            ComponentVMs = new ObservableCollection<ComponentViewModel>();
-            components.CollectionChanged += Components_CollectionChanged;
-            foreach (var component in components)
+            TileVMs = new ObservableCollection<TileViewModel>();
+            for (int i = 0; i < 10; i++)
             {
-                var componentVM = new ComponentViewModel(component);
-                componentVM.ComponentSelected += ComponentVM_ComponentSelected;
-                ComponentVMs.Add(componentVM);
+                for (int j = 0; j < 10; j++)
+                {
+                    TileVMs.Add(new TileViewModel(map.Tiles[i, j], i, j));
+                }
             }
+           
+
+
+            pawn = p;
+            PawnVMs = new ObservableCollection<PawnViewModel>();
             Click = new DelegateCommand<IInputElement>(OnBoadLeftClick);
         }
 
@@ -60,59 +68,29 @@ namespace MyWarcraft.ViewModels
 
         private void BindSelectedComponentCapabilities()
         {
-            if (selectedComponent != null && selectedComponent.Component != null)
+            if (selectedComponent != null && selectedComponent.Pawn != null)
             {
-                if (selectedComponent.Component.BuildingsCapabilities != null)
-                {
-                    foreach (var capability in selectedComponent.Component.BuildingsCapabilities)
-                    {
-                        capability.BuildingStarted += Capability_BuildingStarted;
-                    }
-                }
-                if (selectedComponent.Component.UnitsCapabilities != null)
-                {
-                    foreach (var capability in selectedComponent.Component.UnitsCapabilities)
-                    {
-                        capability.BuildingStarted += Capability_BuildingStarted;
-                    }
-                }
             }
         }
 
         private void Capability_BuildingStarted(object sender, Models.Events.BuildingStartedEventArgs e)
         {
             var component = e.Component;
-            components.Add(component);
+        
         }
 
         private void UnbindSelectedComponentCapabilities()
         {
-            if (selectedComponent != null && selectedComponent.Component != null)
-            {
-                if (selectedComponent.Component.BuildingsCapabilities != null)
-                {
-                    foreach (var capability in selectedComponent.Component.BuildingsCapabilities)
-                    {
-                        capability.BuildingStarted -= Capability_BuildingStarted;
-                    }
-                }
-                if (selectedComponent.Component.UnitsCapabilities != null)
-                {
-                    foreach (var capability in selectedComponent.Component.UnitsCapabilities)
-                    {
-                        capability.BuildingStarted -= Capability_BuildingStarted;
-                    }
-                }
-            }
+            
         }
 
         private void Components_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             foreach (var item in e.NewItems)
             {
-                var componentVM = new ComponentViewModel((AbstractBuildable)item);
+                var componentVM = new PawnViewModel((Pawn)item);
                 componentVM.ComponentSelected += ComponentVM_ComponentSelected;
-                ComponentVMs.Add(componentVM);
+                PawnVMs.Add(componentVM);
             }
         }
     }
